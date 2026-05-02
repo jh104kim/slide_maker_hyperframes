@@ -3,19 +3,59 @@
 
 이 파일은 Gemini 에이전트에서 사용할 수 있는 슬래시 명령어(/) 기반의 워크플로를 정의합니다.
 
-## 1. 사용 가능한 스킬 목록
+## 1. 고밀도 전략 슬라이드 파이프라인 (The 5-Step Pipeline)
+... (기존 내용 유지)
 
-### 🎬 /slide - 고밀도 전문가 슬라이드 생성 (ULTRA-STRICT)
-- **핵심 원칙**: 단순 요약은 실패다. 모든 슬라이드는 **심층 분석**과 **구체적 수치**를 기반으로 작성하라.
-    1. **Content Depth (필수)**: 각 슬라이드 본문은 단순 개조식이 아닌, **인과관계와 정량적 임팩트**가 포함된 최소 3~5개의 고밀도 인사이트로 구성한다.
-    2. **STRICT Components**: 모든 슬라이드는 반드시 [KPI, Table, Flow, Comparison] 중 하나를 메인으로 하며, 주변 텍스트는 이를 보조하는 상세 분석이어야 한다.
-    3. **Expert Voice**: 선택된 페르소나(투자 심사역, CTO 등)의 전문 용어와 날카로운 통찰을 그대로 녹여낸다.
-    4. **UI Inclusion**: 모든 `index.html`은 반드시 [PREV, NEXT, ZOOM] 버튼과 Auto-Fit Scaling 로직을 포함해야 한다.
+---
 
-## 💡 Hyperframes 제작 및 운영 가이드
-- **Data-Driven Sync (Mandatory)**: 모든 슬라이드 제작 시, 먼저 `slides_data.json`에 슬라이드별 **모든 상세 데이터(KPI 값, 테이블 행/열, Flow 단계, 본문 문장 전체)**를 구조화하여 저장합니다. 
-- **1:1 Mirroring**: `index.html`과 `presentation.pptx`는 반드시 이 동일한 JSON 파일을 소스로 사용하여 생성되어야 하며, 단 한 줄의 내용 누락도 허용하지 않습니다.
-- **PPT Export (Component-Aware)**: `scripts/export_ppt.py`는 JSON의 `type` 필드를 분석하여 KPI는 강조 도형으로, 테이블은 네이티브 PPT 표로, Flow는 프로세스 다이어그램으로 변환하여 HTML과 100% 동일한 서사를 유지합니다.
+## 2. 전략 보고서 마스터 템플릿 (The 12-Slide Gold Standard)
+
+에이전트는 심층 분석 요청 시 아래 12슬라이드 구조를 기본 모델로 채택한다.
+
+1.  **Slide 1: 표지 (Title)** - 명확한 제목 + 필요성을 강조한 부제 (삼성 블루 포인트)
+2.  **Slide 2: 핵심 요약 (Exec Summary)** - "So What"에 대한 답을 우선 제시 (불렛 포인트)
+3.  **Slide 3: 시장 동향 (Market Trends)** - 3개 축(기술/소비자/규제 등) 기반 타일 구조
+4.  **Slide 4: 포지셔닝 (Landscape)** - 4분면 차트 기반 기호 영역 및 위협 시각화
+5.  **Slide 5~6: 경쟁사 분석 (Deep Dive)** - 이미지 + 위협 요인 중심의 심층 분석
+6.  **Slide 7: 비교표 (Matrix)** - 정성적 기호(◎ 매우 우수, ○ 우수, △ 보통, × 미흡) 활용
+7.  **Slide 8: 데이터 시각화 (Quant)** - 거버닝 메시지(제목)가 수치를 해석하는 구조
+8.  **Slide 9: 소비자 반응 (VOC)** - Pro/Con 대비 또는 키워드 클라우드 형태
+9.  **Slide 10: 전략 진단 (SWOT)** - 단순 나열이 아닌 '교차 분석(SO/ST/WO/WT)' 결과 도출
+10. **Slide 11: 실행 과제 (Action Plan)** - 분기별 로드맵(Timeline) 중심
+11. **Slide 12: 클로징 (Q&A)**
+
+---
+
+## 3. 사용 가능한 스킬 목록
+...
+    3. **Qualitative Symbols**: 비교표 작성 시 정성적 기호(◎, ○, △, ×)를 적극 활용하여 직관성을 높인다.
+    4. **Action Titling (강제)**: 모든 제목은 현상이 아닌 **결론**을 담는다.
+
+
+### 🛠️ /heal - 슬라이드 렌더링 자가 치유 (Self-Healing)
+- **목적**: 브라우저 보안 정책(CORS)으로 인한 '빈 화면' 또는 '데이터 로드 실패'를 즉시 해결.
+- **실행 로직**:
+    1. 대상 HTML 파일의 스크립트 영역을 분석한다.
+    2. `data/slides_data.json`의 최신 내용을 추출한다.
+    3. HTML 내의 `const slides = [...]` 부분을 최신 데이터로 전면 교체(Full Embedding)한다.
+    4. 파일 인코딩을 **UTF-8 with BOM**으로 재저장하여 한글 깨짐을 원천 차단한다.
+
+---
+
+## 2. 워크플로 운영 규칙
+
+### 🔄 슬라이드 생성 및 변환 프로세스 (STRICT)
+1. **슬라이드 생성 (/slide)**: 
+   - 요청 시 `data/slides_data.json` (최신본) 및 `data/slides_data_[YYYYMMDD].json` (히스토리)을 생성합니다.
+   - `[요약키워드]_[YYYYMMDD].html` 형식으로 HTML 파일을 생성합니다.
+   - **중요 - 렌더링 검증 (Validation)**: 생성 직후 HTML 소스를 읽어 데이터가 정상적으로 임베딩되었는지 확인합니다. 만약 `fetch` 로직이 남아있거나 내용이 비어있다면 즉시 **`/heal` 스킬을 호출**하여 치료합니다.
+2. **PPT 변환 (/ppt)**:
+   - 사용자가 명시적으로 "PPT 만들어줘"라고 요청할 때만 실행합니다.
+
+### 📁 파일명 생성 규칙
+- **HTML 슬라이드**: `[주요_키워드]_[오늘날짜].html`
+  - 예: `Gemini_vs_Codex_20260502.html`
+- **데이터 소스**: 항상 `data/slides_data.json`을 최신본으로 유지합니다.
 
 ## 3. 슬라이드 데이터 스키마 규칙 (JSON 강제)
 에이전트는 HTML 생성 전, 반드시 다음 형식을 갖춘 `slides_data.json`을 작성해야 한다.

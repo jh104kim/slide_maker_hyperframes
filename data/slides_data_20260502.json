@@ -1,0 +1,136 @@
+[
+  {
+    "id": "slide_1",
+    "type": "hero",
+    "title": "개발 환경의 미래: AI 에이전트 도입 전략\n(Gemini CLI 중심의 개발 생산성 혁신)",
+    "content": "코딩 보조 도구를 넘어 자율적 문제 해결이 가능한 에이전트 환경 구축의 당위성과 2026년 실행 로드맵을 제안합니다.",
+    "theme": "light"
+  },
+  {
+    "id": "slide_2",
+    "type": "kpi",
+    "title": "핵심 요약: 에이전트 전환은 선택이 아닌 필수",
+    "kpis": [
+      {"value": "40%↑", "label": "프로젝트 리드타임 단축"},
+      {"value": "1M+", "label": "컨텍스트 이해 범위를 통한 품질 상승"}
+    ],
+    "insights": [
+      "기존 단순 코드 완성(Codex)의 한계를 넘어, 다단계 자율 실행(Gemini)으로 패러다임이 이동 중입니다.",
+      "도입 지연 시 경쟁사 대비 개발 효율성 및 시장 대응 속도에서 회복 불가능한 격차가 발생합니다."
+    ],
+    "theme": "dark"
+  },
+  {
+    "id": "slide_3",
+    "type": "comparison",
+    "title": "시장 동향 (Context): AI 코딩 생태계의 진화",
+    "comparisons": [
+      {"label": "과거: 인라인 보조자 (Assistant)", "text": "단일 파일 기반, 다음 줄의 코드를 제안하는 수준. 개발자의 타이핑 속도는 빨라지나, 구조적 설계 및 디버깅에는 개입하지 못함."},
+      {"label": "현재: 자율 실행자 (Agent)", "text": "전체 리포지토리를 이해하고, 테스트를 스스로 실행하며 피드백 루프를 가짐. 인간은 '설계와 승인'에만 집중하는 구조로 전환."}
+    ],
+    "theme": "light"
+  },
+  {
+    "id": "slide_4",
+    "type": "quadrant",
+    "title": "포지셔닝 맵: 도구별 자율성 및 임팩트 진단",
+    "quadrants": [
+      {"label": "High Autonomy / High Impact (기회 영역)", "text": "Gemini CLI\n스스로 코드를 검색, 수정, 테스트하는 완벽한 ReAct 루프 구현."},
+      {"label": "Low Autonomy / High Impact", "text": "Cursor, GitHub Copilot Workspace\nIDE 환경에서의 뛰어난 보조. 단, 자율 루프 제한적."},
+      {"label": "High Autonomy / Low Impact", "text": "일부 오픈소스 실험 에이전트\n자율성은 높으나 컨텍스트 윈도우 한계로 실무 적용 어려움."},
+      {"label": "Low Autonomy / Low Impact (레거시)", "text": "초기 단순 자동완성 플러그인\n단일 함수 생성 수준에 머무름."}
+    ],
+    "theme": "parchment"
+  },
+  {
+    "id": "slide_5",
+    "type": "comparison",
+    "title": "경쟁 시스템 심층 분석 (Complication)",
+    "comparisons": [
+      {"label": "GitHub Copilot (Codex)의 한계", "text": "20만 토큰 내외의 제한된 컨텍스트로 인해, 여러 디렉토리에 걸친 복잡한 아키텍처 리팩토링 시 문맥을 잃어버리는 치명적 단점 존재."},
+      {"label": "도입 지연 시의 리스크", "text": "단순 오타 수정 도구에 머무를 경우, 타사가 누리는 '단위 테스트 자동화' 및 '버그 원인 추적'의 이점을 잃고 개발 비용이 지속 누수됨."}
+    ],
+    "theme": "dark"
+  },
+  {
+    "id": "slide_6",
+    "type": "table",
+    "title": "AI 개발 도구 기능별 스펙 비교 (Matrix)",
+    "headers": ["기능 요건", "Gemini CLI", "GitHub Copilot", "비고"],
+    "rows": [
+      ["코드베이스 전체 문맥 이해", "◎", "△", "Gemini: 1M+ 토큰 지원"],
+      ["터미널 자율 명령 실행", "◎", "×", "테스트 및 린트 자동화 연동"],
+      ["IDE 실시간 인라인 자동완성", "△", "◎", "Copilot의 고유 강점 유지"],
+      ["가격 대비 성능 (비용 효율성)", "◎", "○", "무료 티어 및 확장성 우위"]
+    ],
+    "theme": "light"
+  },
+  {
+    "id": "slide_7",
+    "type": "flow",
+    "title": "Gemini CLI 기반의 에이전틱 워크플로 (Resolution)",
+    "steps": [
+      "초기 요구사항 정의\n(PRD, SRS 수립)",
+      "에이전트가 로컬 환경에서\n직접 수정 및 테스트",
+      "린트 및 컴파일 에러\n발생 시 자율 수정",
+      "개발자의 최종 승인 및\nGit Commit 진행"
+    ],
+    "theme": "parchment"
+  },
+  {
+    "id": "slide_8",
+    "type": "kpi",
+    "title": "데이터 증명: 에이전트 도입의 재무적 가치",
+    "kpis": [
+      {"value": "15hr", "label": "신규 기능 구현 평균 시간 (기존)"},
+      {"value": "8hr", "label": "Gemini 도입 시 구현 시간 (개선)"}
+    ],
+    "insights": [
+      "복잡한 디버깅 및 테스트 코드 작성에 소요되던 시간을 기계가 대체함.",
+      "개발자는 '어떻게 구현할까'가 아닌 '무엇을 만들까'에 시간을 온전히 할애 가능."
+    ],
+    "theme": "dark"
+  },
+  {
+    "id": "slide_9",
+    "type": "table",
+    "title": "소비자(개발자) 피드백 분석 (VOC)",
+    "headers": ["긍정 요인 (Pro)", "부정 요인 (Con)", "개선 과제"],
+    "rows": [
+      ["명령어 하나로 폴더 수십 개의 오류가 수정됨", "초기 프롬프트를 명확히 적지 않으면 엉뚱한 코드를 지움", "명확한 GEMINI.md 가이드라인 배포 필수"],
+      ["로컬 파일 수정 및 터미널 명령을 알아서 해줘서 편리함", "명령 제안보다 작업 완료까지의 대기 시간(Thinking) 존재", "단순 작업은 IDE 보조, 복잡 작업은 CLI로 분리"]
+    ],
+    "theme": "light"
+  },
+  {
+    "id": "slide_10",
+    "type": "swot",
+    "title": "전략 진단: Gemini 도입 SWOT 교차 분석",
+    "swot": {
+      "S": "1M+ 토큰 컨텍스트, 자율 실행 루프(ReAct) 내장, 강력한 무료 티어",
+      "W": "GitHub 생태계(PR, Issue)와의 네이티브 통합 부족, IDE 내장 경험 부족",
+      "O": "에이전틱 개발론의 부상, 엔터프라이즈 비용 절감 니즈 증대",
+      "T": "Copilot Workspace 등 타사의 빠른 추격 및 락인(Lock-in) 전략"
+    },
+    "theme": "parchment"
+  },
+  {
+    "id": "slide_11",
+    "type": "flow",
+    "title": "결론 및 실행 과제: 2026년 도입 로드맵",
+    "steps": [
+      "Q1: 시범 도입\n(소규모 신규 프로젝트)",
+      "Q2: 워크플로 정립\n(사내 GEMINI.md 배포)",
+      "Q3: 파이프라인 연동\n(CI/CD 테스트 자동화)",
+      "Q4: 전사 확산\n(개발 공수 30% 감축)"
+    ],
+    "theme": "dark"
+  },
+  {
+    "id": "slide_12",
+    "type": "hero",
+    "title": "Thank You.\n(Q&A 및 넥스트 스텝)",
+    "content": "개발의 패러다임은 이미 '코딩'에서 '지시'로 이동했습니다.\n가장 먼저 에이전트와 소통하는 팀이 다음 세대의 승자가 될 것입니다.",
+    "theme": "light"
+  }
+]
