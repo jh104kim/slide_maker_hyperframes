@@ -35,6 +35,11 @@
 - **슬라이드 프리뷰**: `powershell -File src/preview.ps1` (항상 3000번 포트에서 실행)
 - **비디오 렌더링**: `npx hyperframes render`
 - **PPT 변환**: `python src/export_ppt.py data/slides_data.json`
+- **자동 배포**: `/ship` (문서 업데이트 + Git 푸시)
+
+## 📊 최근 생성된 슬라이드 (Latest)
+- **AI 에이전트 도입 전략 (2026-05-02)**: Gemini CLI 기반의 개발 생산성 혁신 보고서 ([Gemini_Strategic_Master_20260502.html](./Gemini_Strategic_Master_20260502.html))
+- **Gemini vs Codex 비교 (2026-05-02)**: 차세대 에이전트와 레거시 도구의 기술적 격차 분석 ([Gemini_vs_Codex_20260502.html](./Gemini_vs_Codex_20260502.html))
 
 ## 🍏 슬라이드 생성 규칙 (Ultra-Strict)
 모든 슬라이드는 반드시 아래 중 하나 이상의 컴포넌트를 포함해야 합니다:
